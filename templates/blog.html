@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN"> 
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="icon" href="{{favicon}}" type="image/x-icon">
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body background="{{background}}">
+    <div class="black-box">
+        <div class="title_date">
+            <h1>{{ post_title }}</h1>
+            <p>发布日期：{{ post_date }}</p>
+        </div>
+        <hr>
+    <p>{{ post_content | safe }}</p>
+    </div>
+</body>
+</html>

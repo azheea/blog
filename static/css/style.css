@@ -1,0 +1,126 @@
+/* 设置页面居中和垂直居中 */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+/* 定义黑色框的样式 */
+.black-box {
+    line-height: 1.5;
+    border-radius: 15px;
+    width: 55%;
+    max-height: 90%;
+    background-color: rgba(18, 18, 18, 0.7);
+    color: white;
+    padding: 20px;
+    overflow: auto;
+    position: relative;
+    margin: 20px 0;
+}
+
+/* 添加渐变边框效果 */
+.black-box::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(to right, #4CAF50, #2196F3, #E91E63);
+    transition: width 0.5s ease-in-out;
+}
+
+/* 自定义滚动条样式 */
+.black-box::-webkit-scrollbar {
+    width: 5px;
+}
+
+.black-box::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.black-box::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    background-image: linear-gradient(to right, #c3c3c3, #c3c3c3);
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+    transition: background-position 0.5s ease-in-out;
+    border-radius: 5px;
+}
+
+.black-box::-webkit-scrollbar-thumb:hover {
+    background-position: 100% 0%;
+}
+
+/* 设置黑色盒子中的段落样式 */
+.black-box p {
+    margin: 0;
+}
+
+/* 设置黑色盒子中的标题样式 */
+.black-box h1 {
+    margin: 0;
+}
+
+/* 分割线的样式 */
+.black-box hr {
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to right, #7cc7e1 0%, #b5d7e3 50%, #7cc7e1 100%);
+    border: none;
+    margin-top: 6%;
+    margin-bottom: 0;
+}
+
+/* 设置标题和日期在同一行 */
+.title_date {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+/* 去掉标题和日期的默认上下 margin 和 padding */
+.title_date h1,
+.title_date p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #7cc7e1;
+}
+
+@media only screen and (max-width: 768px) {
+    .black-box {
+        line-height: 1.5;
+        border-radius: 15px;
+        width: 100;
+        max-height: 90%;
+        background-color: rgba(18, 18, 18, 0.7);
+        color: white;
+        padding: 20px;
+        overflow: auto;
+        position: relative;
+        margin: 20px 0;
+        font-size: 50px;
+
+    }
+
+    .black-box.mobile::-webkit-scrollbar {
+        display: none;
+    }
+}

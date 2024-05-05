@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="icon" href="{{ favicon }}" type="image/x-icon">
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body background="{{ background }}">
+    {% for title, content in passages.items() %}
+        <div class="black-box">
+        <a href="/blog/{{ title }}">
+            <h1>{{ title }}</h1>
+            <p>{{ content }}</p>
+        </a>
+        </div>
+    {% endfor %}
+    </body>
+</html>
